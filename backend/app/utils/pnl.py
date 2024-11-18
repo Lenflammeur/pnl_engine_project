@@ -20,9 +20,9 @@ def compute_pnl(portfolio_data):
         current_price = prices.get(asset, 0)
         quantity = data["quantity"]
         cost_price = data["average_cost"]
-
         if quantity > 0:
             trading_unrealized += (current_price - cost_price) * quantity
+            print(f"[DEBUG] Unrealized PnL for {asset}: (Current Price: {current_price} - Average Cost: {cost_price}) * Quantity: {quantity} = {unrealized}")
         elif quantity < 0:
             trading_realized += data["realized_pnl"]
 
